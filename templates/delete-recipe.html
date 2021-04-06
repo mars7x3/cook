@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{%block content%}
+<h1>Are you sure you wwant to delete this messsage?</h1>
+<form method="POST">
+    {% csrf_token%}
+
+    <input class="btn btn-primary" type="submit" value="Yes">
+    <a class="btn" href="{% url 'home' %}" role="button">Cancel</a>
+
+</form>
+
+{%endblock%}

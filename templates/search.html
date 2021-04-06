@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{% load static%}
+{%block content%}
+<h1>По вашему поиску найдены:</h1>
+        <div class="posts">
+            {%for recipe in recipes %}
+            <article>
+                <a href="#" class="image"><img src="{{recipe.get_image}}" style="width:200px;height:200px;" alt="" /></a>
+                <h3>{{recipe}}</h3>
+                <p>{{recipe.description|truncatewords:10}}</p>
+                <ul class="actions">
+                    <li><a href="{%url 'detail' recipe.id%}" class="button">Смотреть</a></li>
+                </ul>
+            </article>
+            {%endfor%}
+        </div>
+{% endblock %}
